@@ -1,0 +1,31 @@
+# ---------- Android / Gradle ----------
+**/.gradle/
+**/build/
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio / IntelliJ
+**/.idea/
+**/*.iml
+**/*.cxx/
+**/.externalNativeBuild/
+**/captures/
+
+# Config local de máquina
+**/local.properties
+
+# Artefactos de compilación / distribución
+**/*.apk
+**/*.aab
+
+# Firmas / claves (¡nunca al repo!)
+**/*.jks
+**/.keystore
+**/keystore.properties
+
+# Archivos temporales y varios
+**/*.log
+**/*.tmp
+**/*~
+.DS_Store
+Thumbs.db
+.vscode/
