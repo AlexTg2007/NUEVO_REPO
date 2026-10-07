@@ -31,5 +31,38 @@
         android:background="#4CAF50"
         android:layout_gravity="right|bottom">
     </FrameLayout>
+    <FrameLayout
+        android:layout_width="110dp"
+        android:layout_height="115dp"
+        android:background="#00BCD4"
+        android:layout_gravity="top|center">
+    </FrameLayout>
 
+    <FrameLayout
+        android:layout_width="110dp"
+        android:layout_height="115dp"
+        android:background="#00BCD4"
+        android:layout_gravity="bottom|center">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="110dp"
+        android:layout_height="115dp"
+        android:background="#00BCD4"
+        android:layout_gravity="left|center">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="110dp"
+        android:layout_height="115dp"
+        android:background="#CDDC39"
+        android:layout_gravity="right|center">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="110dp"
+        android:layout_height="115dp"
+        android:background="#CDDC39"
+        android:layout_gravity="center">
+    </FrameLayout>
 </FrameLayout>
