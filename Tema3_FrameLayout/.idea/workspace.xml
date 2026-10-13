@@ -17,15 +17,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="758c73c6-0429-4951-8474-5aa71ee71d07" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Tema3_LinearLayout/app/src/main/res/layout/frame.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MyApplication2/.idea/AndroidProjectSystem.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MyApplication2/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MyApplication2/.idea/migrations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MyApplication2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MyApplication2/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MyApplication2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MyApplication2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tema3_LinearLayout/app/src/main/java/com/example/tema3_linearlayout/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tema3_LinearLayout/app/src/main/java/com/example/tema3_linearlayout/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tema3_LinearLayout/app/src/main/res/layout/textview.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tema4/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tema4/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +55,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3KNKKnMLqOzb3j4Du0tqCVr5yFM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -79,6 +73,9 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
 }]]></component>
