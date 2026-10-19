@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l ){
         System.out.println("Has seleccionado el valor:" + adapterView.getItemAtPosition(position));
 
@@ -36,4 +39,6 @@ public class MainActivity extends AppCompatActivity {
     public void onNothingSelected(AdapterView<?> adapterView){
         System.out.println("No has seleccionado nada");
     }
+}
+
 }
