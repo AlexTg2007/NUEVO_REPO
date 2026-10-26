@@ -27,6 +27,6 @@ public class MainActivity extends AppCompatActivity {
                     new Handler(Looper.getMainLooper()).postDelayed(this, 200);
                 }
             }
-        });
+        }, 200);
     }
 }

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:columnCount="4"
+    android:orientation="horizontal"
+    android:rowCount="4"
+    android:useDefaultMargins="true">
+    <TextView
+        android:id="@+id/miTextView"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_columnSpan="4"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:text=""
+        android:textSize="40sp"
+        android:textColor="#000000"
+        android:gravity="center_vertical|end"
+        android:background="#808080"
+        android:padding="10sp" />
+    <Button
+        android:id="@+id/boton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="1"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/boton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="2" />
+
+    <Button
+        android:id="@+id/boton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="3" />
+
+    <Button
+        android:id="@+id/botonBarra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="/" />
+
+    <Button
+        android:id="@+id/boton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="4" />
+
+    <Button
+        android:id="@+id/boton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="5" />
+
+    <Button
+        android:id="@+id/boton6"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="6" />
+
+    <Button
+        android:id="@+id/botonAste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="*" />
+    <Button
+        android:id="@+id/boton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="7" />
+    <Button
+        android:id="@+id/boton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="8" />
+    <Button
+        android:id="@+id/boton9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="9" />
+    <Button
+        android:id="@+id/botonMenos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="-" />
+    <Button
+        android:id="@+id/boton0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="0" />
+    <Button
+        android:id="@+id/botonComa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="." />
+    <Button
+        android:id="@+id/botonIgual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="=" />
+    <Button
+        android:id="@+id/botonMas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="+" />
+    <Button
+        android:id="@+id/botonAc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="Ac"/>
+    <Button
+        android:id="@+id/botonC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CDDC39"
+        android:text="C"/>
+
+
+</GridLayout>
