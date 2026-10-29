@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/frame"
+    >
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:id="@+id/textoCuenta"
+        android:hint="Escriba la cuenta"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:id="@+id/textoPropina"
+        android:hint="Si quiere añadir propina pulse la caja"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:id="@+id/propina"
+
+        />
+
+    <SeekBar
+        android:layout_width="1000px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:id="@+id/barraPropina"
+        android:max="100"
+        android:progress="0"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:id="@+id/textoPorcentaje"
+        />
+
+
+
+</FrameLayout>
