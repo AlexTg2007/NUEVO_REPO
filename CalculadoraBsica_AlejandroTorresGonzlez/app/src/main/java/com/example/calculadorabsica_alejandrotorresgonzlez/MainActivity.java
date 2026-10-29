@@ -37,13 +37,15 @@ public class MainActivity extends AppCompatActivity {
         Button botonAc = findViewById(R.id.botonAc);
         Button botonC = findViewById(R.id.botonC);
 
-        // Botones numericos
+
         // Todos llaman a escribirDigito que evita los ceros a la izquierda
         boton0.setOnClickListener(e -> escribirDigito(textoNumero, "0"));
         boton1.setOnClickListener(e -> {
             Log.d("CALC", "Pulsado el 1");
             escribirDigito(textoNumero, "1");
         });
+
+        //Hacemos los setOnClickListener de cada botón de la calculadora
         boton2.setOnClickListener(e -> escribirDigito(textoNumero, "2"));
         boton3.setOnClickListener(e -> escribirDigito(textoNumero, "3"));
         boton4.setOnClickListener(e -> escribirDigito(textoNumero, "4"));
@@ -53,8 +55,7 @@ public class MainActivity extends AppCompatActivity {
         boton8.setOnClickListener(e -> escribirDigito(textoNumero, "8"));
         boton9.setOnClickListener(e -> escribirDigito(textoNumero, "9"));
 
-        // Operadores
-        // Solo añaden el simbolo al final del texto y no calculan nada todavia
+        //Hacemos los operadores: Solo añadimos el símbolo como texto, por ahora no calculan nada
         botonBarra.setOnClickListener(e -> textoNumero.append("/"));
         botonAste.setOnClickListener(e -> textoNumero.append("*"));
         botonMenos.setOnClickListener(e -> textoNumero.append("-"));
@@ -75,11 +76,20 @@ public class MainActivity extends AppCompatActivity {
                     Math.max(texto.lastIndexOf('+'), texto.lastIndexOf('-')),
                     Math.max(texto.lastIndexOf('*'), texto.lastIndexOf('/')));
 
-            // Numero que se esta escribiendo que es lo que hay detras del ultimo operador
+            /* Con esto sacamos el número que se está escribiendo actualmente, es decir,
+            *Si esribes 34+35, 35 es el número actual.
+            *Esto lo hacemos para asegurarnos que la comprobación de la coma se haga solo
+            *sobre el número actual
+             */
             String numeroActual = texto.substring(ultimoOperador + 1);
 
+
+
             if (numeroActual.contains(",")) {
-                // Ese numero ya tiene coma y no se añade otra
+                /*
+                 *Esto se hace para que si el número ya tiene
+                 * coma no se pueda añadir otra.
+                 */
                 return;
             }
             if (numeroActual.isEmpty()) {
@@ -90,7 +100,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Boton igual calcula el resultado de lo que hay en pantalla
+        /*
+         *Con este setOnClikListener calculamos el resultado
+         *de lo que hay en pantalla
+         */
         botonIgual.setOnClickListener(e -> {
             String texto = textoNumero.getText().toString();
             try {
@@ -103,15 +116,15 @@ public class MainActivity extends AppCompatActivity {
                     textoNumero.setText(String.valueOf(resultado).replace(".", ","));
                 }
             } catch (Exception ex) {
-                // Se llega aqui si hay division entre cero o la operacion esta incompleta
+                // Se llega aqui si hay division entre cero, o la operación esta incompleta
                 textoNumero.setText("Error");
             }
         });
 
-        // Boton AC limpia la pantalla y la deja en cero
+        // Boton AC: Limpia la pantalla y el número cero
         botonAc.setOnClickListener(e -> textoNumero.setText("0"));
 
-        // Boton C borra el ultimo caracter
+        // Boton C: Borra el último carácter
         botonC.setOnClickListener(e -> {
             String texto = textoNumero.getText().toString();
             if (texto.length() > 1 && !texto.equals("Error")) {
@@ -124,75 +137,179 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Metodo 1 añade un digito a la pantalla sin permitir ceros a la izquierda
+    /*
+     * Este metodo sirve para escribir los números en la pantalla
+     * de la calculadora.
+     */
     private void escribirDigito(TextView pantalla, String digito) {
+
+        // Obtenemos el texto que aparece actualmente en la pantalla.
         String texto = pantalla.getText().toString();
 
-        // Si venimos de un error empezamos de cero
+        // Si la pantalla muestra un error, empezamos una operación
+        // nueva desde cero.
         if (texto.equals("Error")) {
             texto = "0";
             pantalla.setText("0");
         }
 
-        // Posicion del ultimo operador o menos 1 si no hay ninguno
+        /*
+         * Buscamos la posición del último operador matemático.
+         *
+         * lastIndexOf() devuelve la última posición en la que aparece
+         * un símbolo. Si no encuentra el símbolo, devuelve -1.
+         *
+         * Math.max() permite quedarnos con la posición más alta,
+         * es decir, con el operador que aparece más a la derecha.
+         */
         int ultimoOperador = Math.max(
                 Math.max(texto.lastIndexOf('+'), texto.lastIndexOf('-')),
-                Math.max(texto.lastIndexOf('*'), texto.lastIndexOf('/')));
+                Math.max(texto.lastIndexOf('*'), texto.lastIndexOf('/'))
+        );
 
-        // Numero que se esta escribiendo ahora que es lo que hay tras el ultimo operador
+        /*
+         *Con esto obtenemos el número que estamos escribiendo actualmente.
+         *
+         */
         String numeroActual = texto.substring(ultimoOperador + 1);
 
+        /*
+         * Comprobamos si el número actual es exactamente cero.
+         * Esto permite evitar los ceros innecesarios a la izquierda.
+         */
         if (numeroActual.equals("0")) {
+
+            // Si ya hay un cero y se pulsa otro cero, no hacemos nada.
             if (digito.equals("0")) {
-                // Ya hay un cero y no se permite escribir otro
                 return;
             }
-            // El numero es solo un cero y se pulsa otro digito asi que se sustituye
-            pantalla.setText(texto.substring(0, texto.length() - 1) + digito);
+
+            /*
+             * Si el número actual es cero y se pulsa otro dígito,
+             * sustituimos el cero por el nuevo número.
+             */
+            pantalla.setText(
+                    texto.substring(0, texto.length() - 1) + digito
+            );
+
         } else {
-            // Caso normal se añade el digito al final
+
+            /*
+             * Si el número actual no es solamente cero,
+             * añadimos el nuevo dígito al final del texto.
+             *
+             * Por ejemplo, si aparece "12" y se pulsa "3",
+             * la pantalla mostrará "123".
+             */
             pantalla.append(digito);
         }
     }
 
-    // Metodo 2 recorre el texto de izquierda a derecha y va calculando
+
+    /*
+
+     *
+     * Este metodo recorre la operación escrita en la pantalla
+     * y calcula su resultado.
+     */
     private double calcularResultado(String texto) {
-        // Java usa punto decimal y no coma
-        // Se añade un mas final para que el ultimo numero tambien se calcule
+
+        /*
+        *Sustituimos las comas por puntos
+         */
         texto = texto.replace(",", ".") + "+";
 
+        // Variable donde iremos acumulando el resultado.
         double resultado = 0;
+
         char operador = '+';
+
         String numero = "";
 
+        /*
+         * Recorremos todos los caracteres de la operación
+         * desde la primera posición hasta la última.
+         */
         for (int i = 0; i < texto.length(); i++) {
+
+            // Obtenemos el carácter que estamos leyendo.
             char simbolo = texto.charAt(i);
 
-            if (simbolo == '+' || simbolo == '-' || simbolo == '*' || simbolo == '/') {
-                // Termina un numero y se aplica el operador anterior
+            /*
+             * Comprobamos si el carácter es un operador matemático.
+             *
+             * Cuando encontramos un operador, significa que hemos
+             * terminado de leer el número anterior.
+             */
+            if (simbolo == '+' || simbolo == '-' ||
+                    simbolo == '*' || simbolo == '/') {
+
+                /*
+                 * Convertimos el número que hemos formado en un
+                 * valor decimal para poder realizar operaciones.
+                 *
+                 * Si el texto no contiene un número válido,
+                 * parseDouble() lanzará una excepción.
+                 */
                 double segundo = Double.parseDouble(numero);
 
+                /*
+                 * Aplicamos al número el operador que teníamos
+                 * guardado de la iteración anterior.
+                 */
+
+                // Si el operador anterior era una suma.
                 if (operador == '+') {
                     resultado = resultado + segundo;
+
+                    // Si el operador anterior era una resta.
                 } else if (operador == '-') {
                     resultado = resultado - segundo;
+
+                    // Si el operador anterior era una multiplicación.
                 } else if (operador == '*') {
                     resultado = resultado * segundo;
+
+                    // En cualquier otro caso, realizamos una división.
                 } else {
-                    // Si se divide entre cero se lanza una excepcion y el boton igual muestra el error
                     if (segundo == 0) {
-                        throw new ArithmeticException("Division entre 0");
+                        throw new ArithmeticException(
+                                "Division entre 0"
+                        );
                     }
+
+                    // Realizamos la división.
                     resultado = resultado / segundo;
                 }
 
+                /*
+                 * Guardamos el operador que acabamos de encontrar.
+                 * Se utilizará cuando terminemos de leer el siguiente
+                 * número.
+                 */
                 operador = simbolo;
+
+                /*
+                 * Vaciamos la variable para empezar a construir
+                 * el siguiente número.
+                 */
                 numero = "";
+
             } else {
-                // Es un digito o un punto y se va formando el numero
+
+                /*
+                 * Si el carácter no es un operador, lo añadimos
+                 * al número que estamos formando.
+                 * Puede ser un dígito o el punto decimal.
+                 */
                 numero = numero + simbolo;
             }
         }
+
+        /*
+         * Cuando termina el recorrido, devolvemos el resultado
+         * calculado.
+         */
         return resultado;
     }
 }
