@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Gestio_Cuentas_Bar</string>
+    <string name="texto_cuenta">Escriba la cuenta</string>
+    <string name="texto_propina">Si quiere añadir propina pulse la caja</string>
+    <string name="tarjeta">Tarjeta de Crédito</string>
+    <string name="efectivo">Efectivo</string>
+    <string name="calcular_total">Calcular Total</string>
 </resources>

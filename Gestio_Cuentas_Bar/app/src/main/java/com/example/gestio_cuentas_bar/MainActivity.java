@@ -3,8 +3,12 @@ package com.example.gestio_cuentas_bar;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -80,8 +84,24 @@ public class MainActivity extends AppCompatActivity {
                     }
             );
         }));
+        RadioGroup grupo = findViewById(R.id.radioGroup);
+        grupo.setY(-180);
 
+        RadioButton tarjeta = findViewById(R.id.tarjeta);
 
+        RadioButton efectivo = findViewById(R.id.efectivo);
+
+        RatingBar barraValoracion = findViewById(R.id.ratingBarra);
+        barraValoracion.setY(600f);
+        barraValoracion.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+
+            }
+        });
+
+        Button calculoTotal = findViewById(R.id.calculoTotal);
+        calculoTotal.setY(-1100f);
 
     }
 }

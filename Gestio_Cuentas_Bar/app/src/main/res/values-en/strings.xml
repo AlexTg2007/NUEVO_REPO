@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Gestio_Cuentas_Bar</string>
+    <string name="texto_cuenta">Enter the bill amount</string>
+    <string name="texto_propina">If you want to add a tip, check the box</string>
+    <string name="tarjeta">Credit Card</string>
+    <string name="efectivo">Cash</string>
+    <string name="calcular_total">Calculate Total</string>
+</resources>

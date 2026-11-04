@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/frame"
@@ -10,7 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|center_horizontal"
         android:id="@+id/textoCuenta"
-        android:hint="Escriba la cuenta"
+        android:hint="@string/texto_cuenta"
+
         />
 
     <TextView
@@ -18,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
         android:id="@+id/textoPropina"
-        android:hint="Si quiere añadir propina pulse la caja"
+        android:hint="@string/texto_propina"
         />
 
     <CheckBox
@@ -26,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
         android:id="@+id/propina"
+
 
         />
 
@@ -35,7 +38,7 @@
         android:layout_gravity="center|center_horizontal"
         android:id="@+id/barraPropina"
         android:max="100"
-        android:progress="0"
+        android:progress="10"
         />
 
     <TextView
@@ -43,8 +46,54 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
         android:id="@+id/textoPorcentaje"
+
         />
 
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        tools:ignore="ExtraText"
+        android:layout_gravity="center|center_horizontal"
+
+        >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tarjeta"
+                android:text="@string/tarjeta"
+
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/efectivo"
+                android:text="@string/efectivo"
+
+                />
+
+    </RadioGroup>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBarra"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:rating="0"
+        android:layout_gravity="center|center_horizontal"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calculoTotal"
+        android:text="@string/calcular_total"
+        android:layout_gravity="bottom|center_horizontal"
+        />
 
 
 </FrameLayout>
