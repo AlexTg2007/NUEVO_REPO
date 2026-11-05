@@ -95,5 +95,15 @@
         android:layout_gravity="bottom|center_horizontal"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textoTotal"
+        android:text="Aquí aparecerá el resultado"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="80dp"/>
 
 </FrameLayout>

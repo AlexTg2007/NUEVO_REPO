@@ -102,6 +102,66 @@ public class MainActivity extends AppCompatActivity {
 
         Button calculoTotal = findViewById(R.id.calculoTotal);
         calculoTotal.setY(-1100f);
+        TextView textoTotal = findViewById(R.id.textoTotal);
+        calculoTotal.setOnClickListener(v -> {
+
+            String cuentaTexto = textoCuenta.getText().toString().trim();
+
+            if (cuentaTexto.isEmpty()) {
+                textoTotal.setText("Falta introducir el valor de la cuenta");
+                return;
+            }
+
+            if (!cuentaTexto.matches("\\d+([.,]\\d{1,2})?")) {
+                textoTotal.setText("Error: introduce un valor numérico válido");
+                return;
+            }
+
+            double cuenta = Double.parseDouble(cuentaTexto.replace(",", "."));
+
+            if (cuenta <= 0) {
+                textoTotal.setText("Error: la cuenta debe ser mayor que 0");
+                return;
+            }
+
+            int idSeleccionado = grupo.getCheckedRadioButtonId();
+
+            if (idSeleccionado == -1) {
+                textoTotal.setText("Error: selecciona un método de pago");
+                return;
+            }
+
+            String metodoPago;
+
+            if (idSeleccionado == R.id.tarjeta) {
+                metodoPago = "Tarjeta";
+            } else {
+                metodoPago = "Efectivo";
+            }
+
+            double importePropina = 0;
+
+            if (propina.isChecked()) {
+                importePropina = cuenta * barraPropina.getProgress() / 100.0;
+            }
+
+            double total = cuenta + importePropina;
+
+            float valoracion = barraValoracion.getRating();
+
+            textoTotal.setText(String.format(
+                    java.util.Locale.getDefault(),
+                    "Importe de la cuenta: %.2f €\nPropina: %.2f €\nTOTAL: %.2f €\nMétodo de pago: %s\nCalificación del servicio: %.1f/5",
+                    cuenta,
+                    importePropina,
+                    total,
+                    metodoPago,
+                    valoracion
+            ));
+
+        });
+
+
 
     }
 }
